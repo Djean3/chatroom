@@ -15,14 +15,12 @@ class ChatRoom:
         return [username for _, username in self.members]
 
     async def broadcast(self, message, sender=None):
+        sender_peername = sender.get_extra_info('peername') if sender else None
         for writer, _ in self.members:
-            if writer is sender:
+            if writer.get_extra_info('peername') == sender_peername:
                 continue
-            try:
-                writer.write(message.encode())
-                await writer.drain()
-            except Exception:
-                pass  # Dead connection, ignore for now
+            writer.write(message.encode())
+            await writer.drain()
 
 class RoomManager:
     def __init__(self):

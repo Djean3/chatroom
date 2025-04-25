@@ -17,12 +17,16 @@ async def handle_recv(reader):
         print(f"\n[Error receiving data: {e}]")
         sys.exit(1)
 
+import readline  
+
 async def handle_send(writer):
     try:
         while True:
             msg = await asyncio.get_event_loop().run_in_executor(None, sys.stdin.readline)
             if not msg:
                 break
+            # Clear the local echoed line from the terminal
+            sys.stdout.write("\033[F\033[K")  # move cursor up and clear line
             writer.write(msg.encode())
             await writer.drain()
     except Exception as e:
