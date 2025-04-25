@@ -22,7 +22,7 @@ class ChatRoom:
                 writer.write(message.encode())
                 await writer.drain()
             except Exception:
-                pass  # Dead pipe? Just skip them for now.
+                pass  # Dead connection, ignore for now
 
 class RoomManager:
     def __init__(self):

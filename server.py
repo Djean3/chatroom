@@ -98,6 +98,8 @@ async def join_chatroom(roomname, username, reader, writer):
             if not message:
                 break
             message = trim_newline(message.decode())
+            if not message:
+                continue  # Skip blank lines to avoid accidental echo
             if message.lower() == "exit":
                 break
             if message.lower() == "/who":
