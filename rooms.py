@@ -18,9 +18,11 @@ class ChatRoom:
         for writer, _ in self.members:
             if writer is sender:
                 continue
-            writer.write(message.encode())
-            await writer.drain()
-
+            try:
+                writer.write(message.encode())
+                await writer.drain()
+            except Exception:
+                pass  # Dead pipe? Just skip them for now.
 
 class RoomManager:
     def __init__(self):
