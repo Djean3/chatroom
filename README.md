@@ -59,27 +59,27 @@ python3 -m venv .venv
 source .venv/bin/activate
 ```
 
-3. Open Multiple Terminal Windows
+### 3. Open Multiple Terminal Windows
 You will need at least three terminal windows to run the server and a couple of clients.
 
 Terminal 1: Will be used to run the server.
 Terminal 2: Will be used to run the first client.
 Terminal 3: Will be used to run the second client (you can open more for additional users).
 
-4. Run the Server (Terminal 1)
+### 4. Run the Server (Terminal 1)
 In the first terminal window, navigate to the project directory (chatroom) and run the server using the following command:
 
 ```bash
 python server.py
 ```
 
-5. Run the Clients (Terminal 2 and 3)
+### 5. Run the Clients (Terminal 2 and 3)
 In the second and third terminal windows (and any additional windows for more clients), navigate to the project directory (chatroom) and run the client using the following command:
 ```bash
 python client.py
 ```
 
-💬 Inside the Chatroom
+### 💬 Inside the Chatroom
 Once you have connected a client, you will see a menu with the following options:
 ```bash
 1. Create Room
@@ -95,7 +95,7 @@ While you are inside a chat room, you can use the following special commands:
 /who: Lists all the users currently in the same room as you.
 exit: Leaves the current chat room and returns you to the main menu.
 ```
-ℹ️ About Supporting Files
+### About Supporting Files
 - .venv/: This directory contains the isolated Python virtual environment. It's best practice to keep project dependencies separate to avoid conflicts with other Python projects.
 - pyproject.toml: This file is automatically created by uv (or can be created manually for other package managers). It stores project metadata and dependency information, contributing to reproducible builds.
 - .python-version: This file specifies the exact Python version (in this case, 3.11.7) that the project is intended to use. This is particularly helpful for users who manage multiple Python versions using tools like pyenv, ensuring a consistent development environment.
