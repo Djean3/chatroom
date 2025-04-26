@@ -2,6 +2,27 @@ Terminal-Based Async Chatroom
 Welcome to the Terminal-Based Async Chatroom project!
 This application allows multiple users to create and join chat rooms and chat in real-time directly from their terminals.
 
+
+# Terminal-Based Async Chatroom
+
+[![Python Version](https://img.shields.io/badge/python-3.11.7-blue.svg)](https://www.python.org/downloads/release/python-3117/)
+[![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
+
+Welcome to the **Terminal-Based Async Chatroom** project! This application provides a real-time, multi-user chat experience directly within your terminal, leveraging asynchronous networking for efficient and scalable communication.
+
+## ✨ Key Features
+
+* **Asynchronous Networking:** Built using `asyncio` to handle multiple concurrent connections and real-time interactions efficiently.
+* **Multi-Room Support:** Users can create, join, and leave multiple chat rooms to participate in different conversations.
+* **User Management:** Upon connecting, users can choose a unique username, and the application keeps track of users within each room.
+* **Real-Time Messaging:** Messages sent by users are instantly broadcasted to all other members within the same room.
+* **Safe Room Management:** Utilizes `asyncio.Lock` to ensure thread-safe operations when managing chat rooms, preventing race conditions.
+* **Graceful Exit:** Users can cleanly disconnect from rooms and the application using simple commands.
+* **Server Logging:** The server console logs new connections and disconnections for monitoring and debugging purposes.
+
+## 📂 Project Structure
+
+
 Key Features
 Asynchronous Networking: Built with asyncio for scalable, real-time interactions.
 
