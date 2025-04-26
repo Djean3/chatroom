@@ -38,21 +38,23 @@ async def handle_client(reader, writer):
             writer.write(b"Enter new room name:\n")
             await writer.drain()
             roomname = trim_newline((await reader.readline()).decode())
-            if room_manager.create_room(roomname):
+            if await room_manager.create_room(roomname):
                 await join_chatroom(roomname, username, reader, writer)
             else:
                 writer.write(b"Room already exists.\n")
                 await writer.drain()
 
         elif choice == "2":
-            if not room_manager.rooms:
+            rooms = await room_manager.list_rooms()
+
+            if not rooms:
                 writer.write(b"\nNo active chat rooms. Create one first.\n")
                 await writer.drain()
                 continue
 
             room_list = "\n".join(
-                f"{room} ({len(room_manager.rooms[room].members)} user(s))"
-                for room in room_manager.rooms
+                f"{room} ({len(rooms[room].members)} user(s))"
+                for room in rooms
             )
             writer.write(f"\nAvailable rooms:\n{room_list}\n\n".encode())
             await writer.drain()
@@ -63,16 +65,22 @@ async def handle_client(reader, writer):
             data = await reader.readline()
             roomname = data.decode().strip()
 
-            if roomname in room_manager.rooms:
+            if roomname in rooms:
                 await join_chatroom(roomname, username, reader, writer)
             else:
                 writer.write(b"Room not found.\n")
                 await writer.drain()
 
         elif choice == "3":
-            room_list = "\n".join(room_manager.rooms.keys()) or "No rooms yet."
-            writer.write(f"\nRooms:\n{room_list}\n".encode())
-            await writer.drain()
+            rooms = await room_manager.list_rooms()
+
+            if not rooms:
+                writer.write(b"\nNo rooms yet.\n")
+                await writer.drain()
+            else:
+                room_list = "\n".join(rooms.keys())
+                writer.write(f"\nRooms:\n{room_list}\n".encode())
+                await writer.drain()
 
         elif choice == "4":
             writer.write(b"Goodbye!\n")

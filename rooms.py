@@ -1,5 +1,7 @@
 import asyncio
 
+rooms_lock = asyncio.Lock()
+
 class ChatRoom:
     def __init__(self, name):
         self.name = name
@@ -26,21 +28,25 @@ class RoomManager:
     def __init__(self):
         self.rooms = {}
 
-    def create_room(self, name):
-        if name in self.rooms:
-            return False
-        self.rooms[name] = ChatRoom(name)
-        return True
-
-    def join_room(self, name, writer, username):
-        if name in self.rooms:
-            self.rooms[name].add(writer, username)
+    async def create_room(self, name):
+        async with rooms_lock:
+            if name in self.rooms:
+                return False
+            self.rooms[name] = ChatRoom(name)
             return True
-        return False
 
-    def leave_room(self, name, writer):
-        if name in self.rooms:
-            self.rooms[name].discard(writer)
+    async def join_room(self, name, writer, username):
+        async with rooms_lock:
+            if name in self.rooms:
+                self.rooms[name].add(writer, username)
+                return True
+            return False
 
-    def list_rooms(self):
-        return self.rooms
+    async def leave_room(self, name, writer):
+        async with rooms_lock:
+            if name in self.rooms:
+                self.rooms[name].discard(writer)
+
+    async def list_rooms(self):
+        async with rooms_lock:
+            return self.rooms
