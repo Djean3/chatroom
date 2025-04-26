@@ -5,6 +5,10 @@
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
 
 Welcome to the **Terminal-Based Async Chatroom** project! This application provides a real-time, multi-user chat experience directly within your terminal, leveraging asynchronous networking for efficient and scalable communication.
+#  Important Notice
+
+This project is designed for a **Linux shell environment** (Ubuntu, WSL2, or similar) and assumes the use of **`uv`** for virtual environment and package management.  
+If you are using another OS or package manager, slight adjustments may be necessary
 
 ##  Key Features
 
