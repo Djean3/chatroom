@@ -2,6 +2,8 @@ import asyncio
 ##
 from rooms import RoomManager
 from utils import trim_newline
+from rich import print
+print("[bold green]Server started successfully![/bold green]")
 
 HOST = "127.0.0.1"
 PORT = 8080
