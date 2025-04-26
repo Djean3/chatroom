@@ -60,11 +60,12 @@ source .venv/bin/activate
 ```
 
 ### 3. Open Multiple Terminal Windows
+
 You will need at least three terminal windows to run the server and a couple of clients.
 
-Terminal 1: Will be used to run the server.
-Terminal 2: Will be used to run the first client.
-Terminal 3: Will be used to run the second client (you can open more for additional users).
+* Terminal 1: Will be used to run the server.
+* Terminal 2: Will be used to run the first client.
+* Terminal 3: Will be used to run the second client (you can open more for additional users).
 
 ### 4. Run the Server (Terminal 1)
 In the first terminal window, navigate to the project directory (chatroom) and run the server using the following command:
