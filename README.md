@@ -41,8 +41,13 @@ Copy
 Edit
 uv venv .venv
 source .venv/bin/activate
-If you don't have uv, you can use python3 -m venv .venv instead.
+If you don't have uv, you can use:
 
+bash
+Copy
+Edit
+python3 -m venv .venv
+source .venv/bin/activate
 3. Open Three Terminal Windows
 Terminal 1: Run the server
 
@@ -75,10 +80,10 @@ Special Commands Inside a Room
 exit — Leaves the current room.
 
 About Supporting Files
-.venv/: Isolated Python virtual environment (best practice for project isolation).
+.venv/ — Isolated Python virtual environment (best practice for project isolation).
 
-pyproject.toml: Automatically created by uv; stores project dependencies and compatibility settings.
+pyproject.toml — Automatically created by uv; stores project dependencies and compatibility settings.
 
-.python-version: Defines the exact Python version (3.11.7) for consistency across environments (used by pyenv).
+.python-version — Defines the exact Python version (3.11.7) to ensure consistent environments (useful for pyenv users).
 
-__pycache__/: Auto-generated cache folder for faster module loading.
+__pycache__/ — Auto-generated cache folder for faster module loading.
