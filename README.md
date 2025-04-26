@@ -1,6 +1,4 @@
 
-
-
 # Terminal-Based Async Chatroom
 
 [![Python Version](https://img.shields.io/badge/python-3.11.7-blue.svg)](https://www.python.org/downloads/release/python-3117/)
@@ -8,7 +6,7 @@
 
 Welcome to the **Terminal-Based Async Chatroom** project! This application provides a real-time, multi-user chat experience directly within your terminal, leveraging asynchronous networking for efficient and scalable communication.
 
-## ✨ Key Features
+##  Key Features
 
 * **Asynchronous Networking:** Built using `asyncio` to handle multiple concurrent connections and real-time interactions efficiently.
 * **Multi-Room Support:** Users can create, join, and leave multiple chat rooms to participate in different conversations.
@@ -18,7 +16,7 @@ Welcome to the **Terminal-Based Async Chatroom** project! This application provi
 * **Graceful Exit:** Users can cleanly disconnect from rooms and the application using simple commands.
 * **Server Logging:** The server console logs new connections and disconnections for monitoring and debugging purposes.
 
-## 📂 Project Structure
+##  Project Structure
 ```bash
 chatroom/
 ├── server.py         # Asynchronous TCP server that manages incoming clients
@@ -40,23 +38,27 @@ Follow these steps to get the chatroom application up and running on your local 
 Open your terminal and navigate to the directory where you want to clone the project. Then, run the following command:
 
 ```bash
-git clone [https://github.com/Djean3/chatroom.git](https://github.com/Djean3/chatroom.git)
+git clone https://github.com/Djean3/chatroom.git
 cd chatroom
 ```
 
 ### 2. Set Up the Virtual Environment
 
-It's recommended to use a virtual environment to isolate the project dependencies. You can use uv (if you have it installed) or venv:
+It's recommended to use a virtual environment to isolate the project dependencies:
 
-Using uv (recommended if installed):
+Create virtual environment:
 ```bash
 uv venv .venv
+```
+Activate virtual enviornment:
+```bash
 source .venv/bin/activate
 ```
-Using venv:
+
+After activating your virtual environment, run the following command to install all required libraries:
 ```bash
-python3 -m venv .venv
-source .venv/bin/activate
+uv pip sync pyproject.toml
+source
 ```
 
 ### 3. Open Multiple Terminal Windows
@@ -80,7 +82,7 @@ In the second and third terminal windows (and any additional windows for more cl
 python client.py
 ```
 
-### 💬 Inside the Chatroom
+### Inside the Chatroom
 Once you have connected a client, you will see a menu with the following options:
 ```bash
 1. Create Room
