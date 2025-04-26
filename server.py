@@ -5,6 +5,9 @@ from utils import trim_newline
 
 HOST = "127.0.0.1"
 PORT = 8080
+COLOR_YOU = "\033[92m"  # Light green for your own messages
+COLOR_OTHER = "\033[94m"  # Light blue for others' messages
+COLOR_RESET = "\033[0m"  # Reset to default terminal color
 
 room_manager = RoomManager()
 
@@ -118,8 +121,8 @@ async def join_chatroom(roomname, username, reader, writer):
             from datetime import datetime  # Make sure this is at the top if it's not already
 
             timestamp = datetime.now().strftime("%H:%M")
-            you_msg = f"[{timestamp}] [YOU] {message}\n"
-            others_msg = f"[{timestamp}] [{username}] {message}\n"
+            you_msg = f"{COLOR_YOU}[{timestamp}] [YOU] {message}{COLOR_RESET}\n"
+            others_msg = f"{COLOR_OTHER}[{timestamp}] [{username}] {message}{COLOR_RESET}\n"
 
             # Show the message back to the sender with [YOU]
             writer.write(you_msg.encode())
