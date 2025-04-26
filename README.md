@@ -58,7 +58,6 @@ source .venv/bin/activate
 After activating your virtual environment, run the following command to install all required libraries:
 ```bash
 uv pip sync pyproject.toml
-source
 ```
 
 ### 3. Open Multiple Terminal Windows
