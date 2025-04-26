@@ -68,8 +68,14 @@ Open your terminal and navigate to the directory where you want to clone the pro
 ```bash
 git clone [https://github.com/Djean3/chatroom.git](https://github.com/Djean3/chatroom.git)
 cd chatroom
+''':
 
-2. Set Up the Virtual Environment
+### 1. Clone the Repository
+
+### 1. Clone the Repository
+### 1. Clone the Repository
+### 2. Set Up the Virtual Environment
+
 It's recommended to use a virtual environment to isolate the project dependencies. You can use uv (if you have it installed) or venv:
 
 Using uv (recommended if installed):
