@@ -89,7 +89,8 @@ Once you have connected a client, you will see a menu with the following options
 ```
 Follow the on-screen prompts to interact with the chatroom.
 
-Special Commands Inside a Room
+### Special Commands Inside a Room
+
 While you are inside a chat room, you can use the following special commands:
 ```bash
 /who: Lists all the users currently in the same room as you.
