@@ -50,7 +50,6 @@ Open your terminal and navigate to the directory where you want to clone the pro
 
 ```bash
 git clone https://github.com/Djean3/chatroom.git
-cd chatroom
 ```
 Navigate to the chatroom folder:
 ```bash
