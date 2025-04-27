@@ -2,7 +2,8 @@
 # Terminal-Based Async Chatroom
 
 [![Python Version](https://img.shields.io/badge/python-3.11.7-blue.svg)](https://www.python.org/downloads/release/python-3117/)
-[![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
+![License](https://img.shields.io/badge/license-Open%20Source-blue.svg)
+
 
 Welcome to the **Terminal-Based Async Chatroom** project! This application provides a real-time, multi-user chat experience directly within your terminal, leveraging asynchronous networking for efficient and scalable communication.
 #  Important Notice
